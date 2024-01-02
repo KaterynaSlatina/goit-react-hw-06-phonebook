@@ -11,10 +11,6 @@ export const FormContact = () => {
   const [number, setNumber] = useState('');
   const dispatch = useDispatch();
 
-  // const handleSubmitContact = () => {
-  //   dispatch(addContactsAction());
-  // };
-
   const handleSubmitContact = e => {
     e.preventDefault();
     const newContact = {
@@ -30,6 +26,7 @@ export const FormContact = () => {
       alert(`${newContact.name} is already in contacts!`);
     } else {
       dispatch(addContactsAction(newContact));
+      e.target.reset();
       setName('');
       setNumber('');
     }
@@ -44,10 +41,6 @@ export const FormContact = () => {
       setNumber(value);
     }
   };
-
-  // const deleteContact = () => {
-  //   dispatch(deleteContactsAction());
-  // };
 
   return (
     <form onSubmit={handleSubmitContact}>

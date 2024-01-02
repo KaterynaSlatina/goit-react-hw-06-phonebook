@@ -17,10 +17,11 @@ li {
 .contactBtn {
   width: 70px;
   justify-content: center;
-  background-color: tomato;
+  background-color: coral;
   height: 30px;
   font-size: 20px;
   border: none;
+  border-radius: 5px;
 }
 
 .contactNames {
