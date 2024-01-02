@@ -1,4 +1,4 @@
-const { createSlice } = require('@reduxjs/toolkit');
+import { createSlice } from '@reduxjs/toolkit';
 
 const filterInitialState = {
   filter: '',
@@ -9,7 +9,7 @@ const filterSlice = createSlice({
   initialState: filterInitialState,
   reducers: {
     filterContacts(state, action) {
-      state.status = action.payload;
+      state.filter = action.payload;
       return action.payload;
     },
   },

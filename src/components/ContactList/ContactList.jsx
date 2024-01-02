@@ -7,25 +7,25 @@ export const ContactList = () => {
   const dispatch = useDispatch();
 
   const contacts = useSelector(state => state.contacts.contacts);
-  const filter = useSelector(state => state.contacts.filter);
-
-  const filteredContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
-  );
+  const filter = useSelector(state => state.filter.filter);
 
   const deleteContact = id => {
     dispatch(deleteContactsAction(id));
   };
 
+  const findContacts = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(filter.toLowerCase())
+  );
+
   return (
     <ul>
       <div className={css.contact}>
-        {filteredContacts.map(({ id, name, number }) => (
+        {findContacts.map(({ id, name, number }) => (
           <li key={id}>
             <p className={css.contactNames}>
               {name} : {number}
             </p>
-
+            {/* contacts={findContacts} */}
             <button
               className={css.contactBtn}
               type="button"

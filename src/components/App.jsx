@@ -9,14 +9,10 @@ import '../redux/store';
 
 export const App = () => {
   const [contacts, setContacts] = useState([]);
-  const [filter, setFilter] = useState('');
+  // const [filter, setFilter] = useState('');
 
-  const changeFilter = e => {
-    setFilter(e.target.value);
-  };
-
-  // const deleteContact = id => {
-  //   setContacts(prevState => prevState.filter(contact => contact.id !== id));
+  // const changeFilter = e => {
+  //   setFilter(e.target.value);
   // };
 
   useEffect(() => {
@@ -31,9 +27,9 @@ export const App = () => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
-  const findContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
-  );
+  // const findContacts = contacts.filter(contact =>
+  //   contact.name.toLowerCase().includes(filter.toLowerCase())
+  // );
 
   return (
     <>
@@ -41,8 +37,10 @@ export const App = () => {
         <h2>Phonebook</h2>
         <FormContact />
         <h2>Contacts list</h2>
-        <ContactList contacts={findContacts} />
-        <Filter changeFilter={changeFilter} filter={filter} />
+        <ContactList
+        // contacts={findContacts}
+        />
+        <Filter />
       </section>
     </>
   );
