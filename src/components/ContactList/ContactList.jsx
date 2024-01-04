@@ -19,7 +19,7 @@ export const ContactList = () => {
 
   return (
     <div className={css.contact}>
-      <ul>
+      <ul className={css.contactList}>
         {findContacts.map(({ id, name, number }) => (
           <li key={id}>
             <p className={css.contactNames}>
