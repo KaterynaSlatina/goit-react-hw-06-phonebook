@@ -1,11 +1,6 @@
-section {
-  font-size: 25px;
-}
-
 body {
   font-family: Arial, sans-serif;
   background-color: aliceblue;
-  margin: 0;
   padding: 0;
 }
 h2 {
@@ -18,7 +13,7 @@ form {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  width: 400px;
+  /* width: 400px; */
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;

@@ -18,8 +18,8 @@ export const ContactList = () => {
   );
 
   return (
-    <ul>
-      <div className={css.contact}>
+    <div className={css.contact}>
+      <ul>
         {findContacts.map(({ id, name, number }) => (
           <li key={id}>
             <p className={css.contactNames}>
@@ -35,7 +35,7 @@ export const ContactList = () => {
             </button>
           </li>
         ))}
-      </div>
-    </ul>
+      </ul>
+    </div>
   );
 };
